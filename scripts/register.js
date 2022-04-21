@@ -52,18 +52,49 @@ let petSalon = {
     ]
 }
 
-console.log(petSalon);
-function displaySalonInfo(){
-    let tmp="";
-    let div=document.getElementById("pets");
-    div.innerHTML=tmp
+function Pet(name,age,gender,breed,service,ownerName,contactPhone){
+    this.name=name;
+    this.age=age;
+    this.gender=gender;
+    this.breed=breed;
+    this.service=service;
+    this.owner=ownerName
+    this.phone=contactPhone;
 }
-console.log(pets)
-function displayPetsNames(){
-    let tmp="";
-    let div=document.getElementById("petSalon");
-    for(let i=0;i<petSalon.length;i++){
-        tmp+=`<li>${petSalon[i].pets}</li>`;
-    }
-    div.innerHTML=tmp;
+//get the info from the inputs and store the information
+let inputName=document.getElementById("txtName");
+let inputAge=document.getElementById("txtAge");
+let inputGender=document.getElementById("txtGender");
+let inputBreed=document.getElementById("txtBreed");
+let inputService=document.getElementById("selService");
+let inputOwnerName=document.getElementById("txtOwner");
+let inputContactPhone=document.getElementById("txtTel");
+
+function register(){
+    //create the pet
+    let thePet = new Pet(inputName.Value,inputAge.Value,inputGender.value,inputBreed.value,inputselService.value,inputOwne.value,inputtxtTel.value);
+    console.log(thePet);
+    //push the pet into the array
+    petSalon.pets.push(thePet);
+    //clear the input
+    clearInputs();
 }
+
+function clearInputs(){
+    inputName.value="";
+    inputAge.value="";
+    inputGender.value="";
+    inputBreed.value="";
+    inputService.value="";
+    inputOwnerName.value="";
+    inputContactPhone.value="";
+}
+
+//create three pets
+let scrappy = new Pet("Scrappy","40","Mixed","Male","Grooming","Shaggy","555-555-555");
+
+let zest = new Pet("Zest","15","Chihuahua","Male","Spa","Brenda","555-555-555");
+
+let leo = new Pet("Leo","12","Poodle","Male","Grooming","Aria","555-555-555");
+
+console.log(scrappy,zest,leo);

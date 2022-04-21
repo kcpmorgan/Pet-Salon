@@ -1,7 +1,7 @@
-let studentFirstname="Aria";
-let studentLastName="Mitchell"
-let studentAge=25;
-let studentIsActive=true;
+//let studentFirstname="Aria";
+//let studentLastName="Mitchell"
+//let studentAge=25;
+//let studentIsActive=true;
 //arrays []
 //objects {}
 
@@ -16,66 +16,92 @@ let studentIsActive=true;
 // challenge:  create an object for a client with the attributes:
 // first name, last name, subscription type, active, credits. 
 //Display the info on the console
-let clientFirstname="Kemar";
-let clientLastName="Mitchell"
-let subscriptionType="Active"
-let credits=50;
+  //  let clientFirstname="Kemar";
+    //let clientLastName="Mitchell"
+   // let subscriptionType="Active"
+   // let credits=50;
 
-let client1 ={
-    firstName:"Kemar",
-    lastName:"Mitchell",
-    subscriptionType:"Active",
-    credits:50,
-}
-console.log(client1.firstName);
-console.log(client1["lastName"]);
-console.log(client1.subscriptionType);
+    //let client1 ={
+      //  firstName:"Kemar",
+     //lastName:"Mitchell",
+      //  subscriptionType:"Active",
+      //  credits:50,
+    ///}
+    //console.log(client1.firstName);
+    //console.log(client1["lastName"]);
+    //console.log(client1.subscriptionType);
 
 
-let students=[
-    {firstName:"Aria",
-    lastName:"Mitchell",
-    age:25,
-    isActive:true
-},
-{
-    firstName:"Anthony",
-    lastName:"Lane",
-    age:25,
-    isActive:true
-},
-{
-    firstName:"Ben",
-    lastName:"Vance",
-    age:25,
-    isActive:false,
-    hobbies:["Listen Music","Read","Play Zelda"],
-    address:{
-        street:"Palm street",
-        zip:"22769",
-        number:"262-k"
-    }
-}];
+    //let students=[
+      //  {firstName:"Aria",
+      //  lastName:"Mitchell",
+      //  age:25,
+      //  isActive:true
+    //},
+    //{
+      //  firstName:"Anthony",
+      //  lastName:"Lane",
+      //  age:25,
+      //  isActive:true
+    //},
+    //{
+      //  firstName:"Ben",
+       // lastName:"Vance",
+       // age:25,
+      //  isActive:false,
+      //  hobbies:["Listen Music","Read","Play Zelda"],
+      //  address:{
+      //      street:"Palm street",
+      //      zip:"22769",
+      //      number:"262-k"
+      //  }
+    //}];
 
-console.log(students[0].firstName);
+//console.log(students[0].firstName);
 
-function displayStudent(){
+//function displayStudent(){
     //travel the array
-    let tmp="";
-    for(let i=0;i<students.length;i++){
-        tmp +=`<li>${students[i].firstName}</li>`;
-        console.log(tmp);
+ //   let tmp="";
+ //   for(let i=0;i<students.length;i++){
+ //       tmp +=`<li>${students[i].firstName}</li>`;
+ //       console.log(tmp);
 
-        document.getElementById("students").innerHTML=tmp;
-    }
+  //      document.getElementById("students").innerHTML=tmp;
+  //  }
 
+//}
+//displayStudent();
+//let p = document.createElement("p");
+//console.log(p);
+//let text = document.createTextNode("This is a paragraph");
+//console.log(text);
+//p.appendChild(text);
+
+//let div=document.getElementById("students");
+//div.appendChild(p);
+
+//pbjrct constructor function
+
+//these are local vars <--------------------->
+    function Students(fname,lname,age,isActive){
+        this.firstName=fname;
+        this.lastName=lname;
+        this.age=age;
+        this.isActive=isActive
 }
-displayStudent();
-let p = document.createElement("p");
-console.log(p);
-let text = document.createTextNode("This is a paragraph");
-console.log(text);
-p.appendChild(text);
 
-let div=document.getElementById("students");
-div.appendChild(p);
+let student1=new Students("Astrid","Bates-Guerrero",25,true);
+let student2=new Students("Alesis","Aldrete",25,true);
+
+console.log(student1,student2);
+
+//Exercise:
+//Create an object constructor function and two objects
+
+function Houses(type,single){
+    this.style=type
+    this.dimension=single;
+}
+
+let house1=new Houses("Wood","Multi");
+let house2=new Houses("Concrete","double");console.log(house1,house2);
