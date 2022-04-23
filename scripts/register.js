@@ -11,46 +11,9 @@ let petSalon = {
         open:"9:00 a.m.",
         close:"8:00 p.m."
     },
-    pets:[
-        {
-            name:"Scooby",
-            age: 50,
-            breed:"Dane",
-            gender:"Male",
-            service:"Grooming",
-            ownersname: "Shaggy",
-            contactphone:"555-555-555"
-
-        },
-        {
-            name:"Scrappy",
-            age:40,
-            breed:"Mixed",
-            gender:"Male",
-            service:"Grooming",
-            ownersname:"Shaggy",
-            contactphone:"555-555-555"
-        },
-        {
-            name:"Zest",
-            age:15,
-            breed:"Chihuahua",
-            gender:"Male",
-            service:"Spa",
-            ownersname:"Brenda",
-            contactphone:"555-555-555"
-        },
-        {
-            name:"Leo",
-            age:12,
-            breed:"Poodle",
-            gender:"Male",
-            service:"Grooming",
-            ownersname:"Aria",
-            contactphone:"555-555-555"
-        }
-    ]
+    pets:[]
 }
+
 
 function Pet(name,age,gender,breed,service,ownerName,contactPhone){
     this.name=name;
@@ -67,17 +30,37 @@ let inputAge=document.getElementById("txtAge");
 let inputGender=document.getElementById("txtGender");
 let inputBreed=document.getElementById("txtBreed");
 let inputService=document.getElementById("selService");
-let inputOwnerName=document.getElementById("txtOwner");
-let inputContactPhone=document.getElementById("txtTel");
+let inputOwner=document.getElementById("txtOwner");
+let inputPhone=document.getElementById("txtTel");
+
+function isValid(aPet){
+    //return a false value when the pet is not valid
+    //return true if the pet is valid
+    let valid=true;
+    
+    if(aPet.service.length==0){
+        valid=false;
+        console.error("Invalid name");
+    }
+    if(aPet.phone.length==0){
+        valid=false;
+        console.error("Invalid name");
+    }
+    return valid;// it could be true or false
+
+}
 
 function register(){
     //create the pet
-    let thePet = new Pet(inputName.Value,inputAge.Value,inputGender.value,inputBreed.value,inputselService.value,inputOwne.value,inputtxtTel.value);
-    console.log(thePet);
+    let thePet = new Pet(inputName.Value,inputAge.Value,inputGender.value,inputBreed.value,inputService.value,inputOwner.value,inputPhone.value);
+    if(isValid(thePet)){
     //push the pet into the array
     petSalon.pets.push(thePet);
+    displayCards();
     //clear the input
     clearInputs();
+    }
+    
 }
 
 function clearInputs(){
@@ -86,8 +69,8 @@ function clearInputs(){
     inputGender.value="";
     inputBreed.value="";
     inputService.value="";
-    inputOwnerName.value="";
-    inputContactPhone.value="";
+    inputOwner.value="";
+    inputPhone.value="";
 }
 
 //create three pets
@@ -97,4 +80,5 @@ let zest = new Pet("Zest","15","Chihuahua","Male","Spa","Brenda","555-555-555");
 
 let leo = new Pet("Leo","12","Poodle","Male","Grooming","Aria","555-555-555");
 
-console.log(scrappy,zest,leo);
+petSalon.pets.push(scrappy,zest,leo)
+displayCards()

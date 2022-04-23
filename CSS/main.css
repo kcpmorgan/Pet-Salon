@@ -16,3 +16,16 @@ header.site-header{
 .form-container div{
     margin-bottom: 1rem;
 }
+#pets{
+    display: flex;
+}
+.pet{
+
+    background-color: lightgray;
+    display: grid;
+    justify-content: space-between;
+    border-style: solid;
+    margin-left: 10px;
+}
+
+
