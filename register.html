@@ -33,12 +33,14 @@
             <div>
                 <input class="form-control" type="text" id="txtBreed" placeholder="Enter the breed"/> 
             </div>
+            <div>
+                <input class="form-control" type="text" id="txtColor" placeholder="Enter pet color"/> 
+            </div>
             
             <div>
                 <select class="form-control" id="selService">
-                    <option value="Nails trim">Nail trim</option>
-                    <option value="Grooming">Grooming</option>
-                    <option value="Bath">Bath</option>
+                    <option value="Bath & Brush">Bath & Brush</option>
+                    <option value="Basic Grooming">Basic Grooming</option>
                     <option value="Full Service Spa">Full Service Spa</option>
                 </select> 
             </div>
@@ -52,17 +54,21 @@
             </div>
             <button onclick="register();" class="btn btn-primary">Register</button>
         </div>
-
-        <div id="pets">
+        <div class="container">
+            <input type="search" id="txtSearch"/>
+            <button onclick="searchPet();" class="btn btn-secondary">Search</button>
+        </div>
+            
+        <div class="container" id="pets">
         
         </div>
 
     </main>
 
-    <footer>
-        <p>The Fashion Pet</p> 
-        <p>Hours:  M-Sat  8:00am-9:00pm</p>
-        <p>787 University Ave, Utopia CA 23456</p>
+    <footer div class="container footer">
+        <p>The Fashion Pet ✨ </p> 
+        <p>Hours: 🕗 M-Sat  8:00am-9:00pm</p>
+        <p> 🏢 787 University Ave, Utopia CA 23456</p>
         <!-- display salon details here -->
     </footer>
     <script src="scripts/display.js"></script>

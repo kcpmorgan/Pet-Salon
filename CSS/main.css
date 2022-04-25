@@ -11,7 +11,29 @@ header.site-header{
     background-position: center;
     background-size: cover;
 }
+/*about*/
+.home img{
+    width: 300px;
+    height: 200px;
+    padding-top: 10px;
 
+}
+.home h1{
+    color: green;
+}
+.home text{
+    display:flex
+}
+
+/*Services*/
+.services{
+    display:flexbox;
+    justify-content: space-between;
+    padding: 1rem;
+}
+.services h3{
+    color: green;
+}
 /*register form*/
 .form-container div{
     margin-bottom: 1rem;
@@ -26,6 +48,26 @@ header.site-header{
     justify-content: space-between;
     border-style: solid;
     margin-left: 10px;
+    padding: 1rem;
+}
+.pet label{
+    display: block;
+}
+.pet .pet-header{
+    display: flex;
+    justify-content: space-between;
+}
+.pet .pet-header button{
+    font-size: 14px;
+    border: none;
+}
+.highlight{
+    border: 3px solid blue;
 }
 
-
+/*footer*/
+.footer{
+    display:flex;
+    justify-content: space-around;
+    padding: 3rem;
+}
